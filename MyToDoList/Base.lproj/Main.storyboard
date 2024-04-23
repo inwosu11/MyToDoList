@@ -11,7 +11,7 @@
         <!--Settings-->
         <scene sceneID="CgB-3E-P3U">
             <objects>
-                <viewController title="Settings" id="rlt-dE-iq9" sceneMemberID="viewController">
+                <viewController title="Settings" id="rlt-dE-iq9" customClass="SettingsViewController" customModule="MyToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vQu-64-Ls4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,6 +54,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" selectedImage="Settings" id="j0r-bD-0kZ"/>
+                    <connections>
+                        <outlet property="pckSortField" destination="lpO-P8-VQa" id="GnP-LQ-B88"/>
+                        <outlet property="swAscending" destination="JTc-ca-4o5" id="YXh-La-V3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRQ-FD-Ly5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

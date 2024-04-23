@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1171BEBB2BD8057E00214FA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BEBA2BD8057E00214FA0 /* Constants.swift */; };
+		1171BEBD2BD8062500214FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */; };
 		8680F5382BCEEC53003880D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680F5372BCEEC53003880D1 /* AppDelegate.swift */; };
 		8680F53A2BCEEC53003880D1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680F5392BCEEC53003880D1 /* SceneDelegate.swift */; };
 		8680F53C2BCEEC53003880D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680F53B2BCEEC53003880D1 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1171BEBA2BD8057E00214FA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8680F5342BCEEC53003880D1 /* MyToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8680F5372BCEEC53003880D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8680F5392BCEEC53003880D1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				8680F5422BCEEC55003880D1 /* LaunchScreen.storyboard */,
 				8680F5452BCEEC55003880D1 /* Info.plist */,
 				1171BEBA2BD8057E00214FA0 /* Constants.swift */,
+				1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */,
 			);
 			path = MyToDoList;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				8680F53C2BCEEC53003880D1 /* ViewController.swift in Sources */,
 				8680F5382BCEEC53003880D1 /* AppDelegate.swift in Sources */,
 				8680F53A2BCEEC53003880D1 /* SceneDelegate.swift in Sources */,
+				1171BEBD2BD8062500214FA0 /* SettingsViewController.swift in Sources */,
 				1171BEBB2BD8057E00214FA0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
