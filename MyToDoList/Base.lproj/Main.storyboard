@@ -72,7 +72,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Htf-vO-kDH">
-                                <rect key="frame" x="0.0" y="90" width="393" height="699"/>
+                                <rect key="frame" x="0.0" y="134" width="393" height="655"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gA9-ZU-rtf">
                                         <rect key="frame" x="10" y="0.0" width="372.66666666666669" height="747"/>
@@ -115,11 +115,14 @@
                                                         <rect key="frame" x="171.00000000000003" y="0.0" width="83" height="34.333333333333336"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Change"/>
+                                                        <connections>
+                                                            <segue destination="psm-iu-DOw" kind="show" id="IIb-fJ-rLu"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VtY-3B-yFd">
-                                                <rect key="frame" x="0.0" y="108.33333333333337" width="372.66666666666669" height="64.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="108.33333333333331" width="372.66666666666669" height="64.666666666666686"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VN-IV-dET">
                                                         <rect key="frame" x="0.0" y="0.0" width="59" height="20.333333333333332"/>
@@ -128,7 +131,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ft2-RO-aih">
-                                                        <rect key="frame" x="0.0" y="30.333333333333261" width="372.66666666666669" height="34.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="30.333333333333375" width="372.66666666666669" height="34.333333333333343"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ffc-bS-dls">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85.666666666666671" height="34.333333333333336"/>
@@ -200,7 +203,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="q5U-ef-bY0"/>
                             </scrollView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-7B-cr5" userLabel="Change Edit Mode">
-                                <rect key="frame" x="131" y="59" width="131" height="32"/>
+                                <rect key="frame" x="131" y="103" width="131" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="d8F-Im-v4t"/>
                                 </constraints>
@@ -221,11 +224,39 @@
                             <constraint firstItem="eS0-7B-cr5" firstAttribute="top" secondItem="VyG-xI-gwa" secondAttribute="top" id="hHN-nd-aI5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" image="To-Do" selectedImage="To-Do" id="W9K-FV-vzM"/>
+                    <navigationItem key="navigationItem" title="To-Do Item" id="pJ7-zV-vhV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrY-6o-q40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-371.75572519083966" y="-611.26760563380287"/>
+            <point key="canvasLocation" x="554.96183206106866" y="-611.26760563380287"/>
+        </scene>
+        <!--Due Date-->
+        <scene sceneID="2ce-wv-3dc">
+            <objects>
+                <viewController title="Due Date" id="psm-iu-DOw" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rRU-7b-oG8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="QHF-Kw-u3R">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HTp-Ae-uAf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QHF-Kw-u3R" firstAttribute="top" secondItem="HTp-Ae-uAf" secondAttribute="top" id="OL2-vH-I2b"/>
+                            <constraint firstAttribute="trailing" secondItem="QHF-Kw-u3R" secondAttribute="trailing" id="VMy-Cb-t7F"/>
+                            <constraint firstItem="QHF-Kw-u3R" firstAttribute="leading" secondItem="HTp-Ae-uAf" secondAttribute="leading" id="YxT-j5-caI"/>
+                            <constraint firstItem="QHF-Kw-u3R" firstAttribute="bottom" secondItem="HTp-Ae-uAf" secondAttribute="bottom" id="iRC-5t-eY0"/>
+                            <constraint firstItem="QHF-Kw-u3R" firstAttribute="centerX" secondItem="rRU-7b-oG8" secondAttribute="centerX" id="tbE-kO-LN6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="3Ao-Ig-OOs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DnA-MI-iH6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="-646"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RAq-Ib-p0U">
@@ -237,13 +268,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xZE-TY-Cuw" kind="relationship" relationship="viewControllers" id="cib-VH-OIM"/>
+                        <segue destination="dMP-Gs-v4Y" kind="relationship" relationship="viewControllers" id="cib-VH-OIM"/>
                         <segue destination="rlt-dE-iq9" kind="relationship" relationship="viewControllers" id="rDh-wB-ZnB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6B7-wn-6Bd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1276" y="-307"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="699-oB-AJN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dMP-Gs-v4Y" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" image="To-Do" selectedImage="To-Do" id="W9K-FV-vzM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EZK-tE-3FQ">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="xZE-TY-Cuw" kind="relationship" relationship="rootViewController" id="RsX-Li-hrA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12v-8O-1Bg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-371.75572519083966" y="-611.26760563380287"/>
         </scene>
     </scenes>
     <resources>
