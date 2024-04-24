@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import CoreData
+import AVFoundation
 
-class ToDoViewController: UIViewController {
+class ToDoViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     @IBOutlet weak var txtTitle: UITextField!
+    @IBOutlet weak var sgmtEditMode: UISegmentedControl!
     
     @IBOutlet weak var lbldate: UILabel!
     
@@ -27,11 +32,45 @@ class ToDoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.changeEditMode(self)
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func changeEditMode(_ sender: Any) {
+        let textFields: [UITextField] = [txtTitle]
+        let textViews: [UITextView] = [ txtDescription]
+        if sgmtEditMode.selectedSegmentIndex == 0 {
+            for textField in textFields {
+                textField.isEnabled = false
+                textField.borderStyle = UITextField.BorderStyle.none
+            }
+            for textView in textViews {
+                textView.isEditable = false
+                textView.layer.borderWidth = 0
+            }
+            navigationItem.rightBarButtonItem = nil
+            
+            btnChange.isHidden = true
+        }
+        else if sgmtEditMode.selectedSegmentIndex == 1{
+            for textField in textFields {
+                textField.isEnabled = true
+                textField.borderStyle = UITextField.BorderStyle.roundedRect
+            }
+            for textView in textViews {
+                textView.isEditable = true
+                textView.layer.borderWidth = 1
+            }
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveContact)) // Fix selector
+                     btnChange.isHidden = false
+                 }
+             }
+    
+    @objc func saveContact() {
+        appDelegate.saveContext()
+        sgmtEditMode.selectedSegmentIndex = 0
+        changeEditMode(self)
+    }
     /*
     // MARK: - Navigation
 
