@@ -6,20 +6,54 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoListTableViewController: UITableViewController {
     
-    let Item = ["Jim", "John", "Dana", "Rosie", "Justin", "Jeremy", "Sarah", "Matt", "Joe", "Donald", "Jeff"]
-
+    //let Items = ["Jim", "John", "Dana", "Rosie", "Justin", "Jeremy", "Sarah", "Matt", "Joe", "Donald", "Jeff"]
+    var Items:[NSManagedObject] = []
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadDataFromDatabase()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    func loadDataFromDatabase () {
+        //Read settings to enable sorting
+        let settings = UserDefaults.standard
+        let sortField = settings.string(forKey: Constants.kSortField)
+        let sortAscending = settings.bool (forKey: Constants.kSortDirectionAscending)
+        //Set up Core Data Context
+        let context = appDelegate.persistentContainer.viewContext
+        //Set up Request
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Item")
+        //Specify sorting
+        let sortDescriptor = NSSortDescriptor (key: sortField, ascending: sortAscending)
+        let sortDescriptorArray = [sortDescriptor]
+        //to sort by multiple fields, add more sort descriptors to the array
+        //request.sortDescriptors = sortDescriptorArray
+        //Execute request
+        do {
+            Items = try context.fetch(request)
+        } catch let error as NSError {
+            print ("Could not fetch. \(error), \(error.userInfo) ")
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+     //   loadDataFromDatabase()
+        tableView.reloadData()
+    }
+   
 
     // MARK: - Table view data source
 
@@ -29,19 +63,21 @@ class TodoListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Item.count
+        return Items.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemsCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = Item[indexPath.row]
-            return cell
+        let item = Items[indexPath.row] as? Item
+        cell.textLabel?.text = item?.title
+        cell.detailTextLabel?.text = item?.descript
+        return cell
         
     }
-    
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -78,14 +114,20 @@ class TodoListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        if segue.identifier == "EditContact" {
+//            let toDoController = segue.destination as? ToDoViewController
+//            let selectedRow = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
+////            let selectedItem = contacts[selectedRow!] as? Contact
+////            contactController?.currentContact = selectedContact!
+//        }
+//    }
+//    
 
 }

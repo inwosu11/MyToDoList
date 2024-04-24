@@ -16,6 +16,7 @@
 		8680F53F2BCEEC53003880D1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8680F53E2BCEEC53003880D1 /* Base */; };
 		8680F5412BCEEC55003880D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8680F5402BCEEC55003880D1 /* Assets.xcassets */; };
 		8680F5442BCEEC55003880D1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8680F5432BCEEC55003880D1 /* Base */; };
+		86B976392BD94A58004EA9D2 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B976382BD94A58004EA9D2 /* DateViewController.swift */; };
 		BD165DA92BD8F8BC0047A013 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD165DA82BD8F8BC0047A013 /* TodoListTableViewController.swift */; };
 		BD165DB32BD9067E0047A013 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD165DB12BD9067E0047A013 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		8680F5402BCEEC55003880D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8680F5432BCEEC55003880D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8680F5452BCEEC55003880D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86B976382BD94A58004EA9D2 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		BD165DA82BD8F8BC0047A013 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
 		BD165DB22BD9067E0047A013 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 		8680F5362BCEEC53003880D1 /* MyToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				86B976382BD94A58004EA9D2 /* DateViewController.swift */,
 				8680F5372BCEEC53003880D1 /* AppDelegate.swift */,
 				8680F5392BCEEC53003880D1 /* SceneDelegate.swift */,
 				8680F53B2BCEEC53003880D1 /* ViewController.swift */,
@@ -160,6 +163,7 @@
 				BD165DB32BD9067E0047A013 /* Model.xcdatamodeld in Sources */,
 				1171BEBB2BD8057E00214FA0 /* Constants.swift in Sources */,
 				1169E32F2BD8DC0800837B2B /* ToDoViewController.swift in Sources */,
+				86B976392BD94A58004EA9D2 /* DateViewController.swift in Sources */,
 				BD165DA92BD8F8BC0047A013 /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

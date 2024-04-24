@@ -63,7 +63,7 @@
             </objects>
             <point key="canvasLocation" x="-373.28244274809157" y="153.52112676056339"/>
         </scene>
-        <!--Todo List Table View Controller-->
+        <!--To Do Items-->
         <scene sceneID="Lsz-gS-W3p">
             <objects>
                 <tableViewController id="feM-Pb-VpC" customClass="TodoListTableViewController" customModule="MyToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,13 +72,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="Xkj-oA-s1s">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemsCell" id="Xkj-oA-s1s">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xkj-oA-s1s" id="KTw-Jo-3o3">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="xZE-TY-Cuw" kind="show" identifier="EditItem" id="3YT-wE-jtg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -86,10 +89,23 @@
                             <outlet property="delegate" destination="feM-Pb-VpC" id="1eS-pl-2lw"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="To Do Items" id="Yef-Xj-ame">
+                        <centerItemGroups>
+                            <barButtonItemGroup customizationDisposition="fixed" id="lRZ-ll-WGP">
+                                <barButtonItems>
+                                    <barButtonItem systemItem="add" id="hKy-tQ-qwq">
+                                        <connections>
+                                            <segue destination="xZE-TY-Cuw" kind="show" identifier="AddItem" id="tGY-q9-jeP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </barButtonItems>
+                            </barButtonItemGroup>
+                        </centerItemGroups>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZj-Zk-dHp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="508" y="173"/>
+            <point key="canvasLocation" x="474" y="-611"/>
         </scene>
         <!--To Do Item-->
         <scene sceneID="hrw-u8-DBd">
@@ -144,7 +160,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Change"/>
                                                         <connections>
-                                                            <segue destination="psm-iu-DOw" kind="show" id="IIb-fJ-rLu"/>
+                                                            <segue destination="psm-iu-DOw" kind="show" identifier="segueToDoDate" id="IIb-fJ-rLu"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -270,12 +286,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrY-6o-q40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="554.96183206106866" y="-611.26760563380287"/>
+            <point key="canvasLocation" x="1247" y="-611"/>
         </scene>
         <!--Due Date-->
         <scene sceneID="2ce-wv-3dc">
             <objects>
-                <viewController title="Due Date" id="psm-iu-DOw" sceneMemberID="viewController">
+                <viewController title="Due Date" id="psm-iu-DOw" customClass="DateViewController" customModule="MyToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rRU-7b-oG8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,10 +311,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3Ao-Ig-OOs"/>
+                    <connections>
+                        <outlet property="dtpDate" destination="QHF-Kw-u3R" id="Clk-UN-3Ls"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DnA-MI-iH6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="-611"/>
+            <point key="canvasLocation" x="2100" y="-611"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RAq-Ib-p0U">
@@ -330,14 +349,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="xZE-TY-Cuw" kind="relationship" relationship="rootViewController" id="RsX-Li-hrA"/>
+                        <segue destination="feM-Pb-VpC" kind="relationship" relationship="rootViewController" id="OJH-HJ-oad"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12v-8O-1Bg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-371.75572519083966" y="-611.26760563380287"/>
+            <point key="canvasLocation" x="-332" y="-611"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3YT-wE-jtg"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Settings" width="26" height="28"/>
         <image name="To-Do" width="28" height="26"/>
