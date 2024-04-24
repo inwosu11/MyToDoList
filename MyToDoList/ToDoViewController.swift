@@ -13,7 +13,7 @@ class ToDoViewController: UIViewController, UITextFieldDelegate, DateControllerD
     
     var currentToDo: Item?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var selectedImportance: String?
+    var selectedImportance: Double?
     
     @IBOutlet weak var txtTitle: UITextField!
     @IBOutlet weak var sgmtEditMode: UISegmentedControl!
@@ -79,13 +79,13 @@ class ToDoViewController: UIViewController, UITextFieldDelegate, DateControllerD
            // Set selectedImportance based on the tapped button
            switch sender {
            case btnLow:
-               selectedImportance = "Low"
+               selectedImportance = 1
            case btnMedium:
-               selectedImportance = "Medium"
+               selectedImportance = 2
            case btnHigh:
-               selectedImportance = "High"
+               selectedImportance = 3
            case btnUrgent:
-               selectedImportance = "Urgent"
+               selectedImportance = 4
            default:
                break
            }
@@ -98,7 +98,7 @@ class ToDoViewController: UIViewController, UITextFieldDelegate, DateControllerD
         }
         currentToDo?.descript = txtDescription.text
         currentToDo?.title = txtTitle.text
-        currentToDo?.priority = selectedImportance
+        currentToDo?.priority = selectedImportance ?? 1
         return true
     }
     
