@@ -30,13 +30,31 @@ class ToDoViewController: UIViewController, UITextFieldDelegate, DateControllerD
     
     @IBOutlet weak var btnUrgent: UIButton!
     
-    @IBOutlet weak var txtDescription: UITextView!
+    @IBOutlet weak var txtDescription: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.changeEditMode(self)
         // Do any additional setup after loading the view.
+        if currentToDo != nil {
+                txtTitle.text = currentToDo?.title
+                txtDescription.text = currentToDo?.descript
+                print("Description: \(String(describing: currentToDo?.descript))")
+                let formatter = DateFormatter()
+                formatter.dateStyle = .short
+                if let date = currentToDo?.date {
+                    lbldate.text = formatter.string(from: date)
+                }
+            }
+            
+            let textFields: [UITextField] = [txtTitle, txtDescription]
+
+            for textfield in textFields {
+                textfield.addTarget(self, action: #selector(textFieldShouldEndEditing(_:)), for: .editingDidEnd)
+            }
         
+            txtDescription.delegate = self
+      /*
         let textFields: [UITextField] = [txtTitle]
         let textViews: [UITextView] = [txtDescription]
         
@@ -46,6 +64,7 @@ class ToDoViewController: UIViewController, UITextFieldDelegate, DateControllerD
         for textView in textViews {
             textView.delegate = self
         }
+       */
     }
     
     func selectImportance(_ sender: UIButton) {
@@ -90,16 +109,16 @@ class ToDoViewController: UIViewController, UITextFieldDelegate, DateControllerD
     
     @IBAction func changeEditMode(_ sender: Any) {
         
-        let textFields: [UITextField] = [txtTitle]
-        let textViews: [UITextView] = [ txtDescription]
+        let textFields: [UITextField] = [txtTitle, txtDescription]
+        
         if sgmtEditMode.selectedSegmentIndex == 0 {
             for textField in textFields {
                 textField.isEnabled = false
                 textField.borderStyle = UITextField.BorderStyle.none
             }
-            for textView in textViews {
-                textView.isEditable = false
-                textView.layer.borderWidth = 0
+            for textField in textFields {
+                textField.isEnabled = false
+                textField.layer.borderWidth = 0
             }
             navigationItem.rightBarButtonItem = nil
             
@@ -110,9 +129,9 @@ class ToDoViewController: UIViewController, UITextFieldDelegate, DateControllerD
                 textField.isEnabled = true
                 textField.borderStyle = UITextField.BorderStyle.roundedRect
             }
-            for textView in textViews {
-                textView.isEditable = true
-                textView.layer.borderWidth = 1
+            for textField in textFields {
+                textField.isEnabled = true
+                textField.layer.borderWidth = 1
             }
             navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveContact)) // Fix selector
             btnChange.isHidden = false

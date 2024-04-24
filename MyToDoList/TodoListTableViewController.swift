@@ -117,17 +117,24 @@ class TodoListTableViewController: UITableViewController {
     
     // MARK: - Navigation
 
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        // Pass the selected object to the new view controller.
-//        if segue.identifier == "EditContact" {
-//            let toDoController = segue.destination as? ToDoViewController
-//            let selectedRow = self.tableView.indexPath(for: sender as! UITableViewCell)?.row
-////            let selectedItem = contacts[selectedRow!] as? Contact
-////            contactController?.currentContact = selectedContact!
-//        }
-//    }
-//    
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Check for the right segue identifier
+        if segue.identifier == "EditItem" {
+            // Get a reference to the destination view controller
+            let toDoViewController = segue.destination as? ToDoViewController
+            
+            // Find the selected row index
+            if let selectedRowIndexPath = tableView.indexPathForSelectedRow {
+                // Retrieve the item from your Items array
+                let selectedItem = Items[selectedRowIndexPath.row] as? Item
+                // Pass the selected item to the ToDoViewController
+                toDoViewController?.currentToDo = selectedItem
+            }
+        }
+    }
+
 
 }
