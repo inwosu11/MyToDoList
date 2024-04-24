@@ -23,6 +23,7 @@ class TodoListTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,17 +88,28 @@ class TodoListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let context = appDelegate.persistentContainer.viewContext
+                    context.delete(Items[indexPath.row])
+                    
+                    do {
+                        try context.save()
+                    } catch {
+                        fatalError("Error saving context: \(error)")
+                    }
+                    
+                    loadDataFromDatabase() // reload data from the database after changes
+                    
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
