@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1169E32F2BD8DC0800837B2B /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169E32E2BD8DC0800837B2B /* ToDoViewController.swift */; };
-		117196AB2BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 117196A92BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld */; };
 		1171BEBB2BD8057E00214FA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BEBA2BD8057E00214FA0 /* Constants.swift */; };
 		1171BEBD2BD8062500214FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */; };
 		8680F5382BCEEC53003880D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8680F5372BCEEC53003880D1 /* AppDelegate.swift */; };
@@ -17,11 +16,12 @@
 		8680F53F2BCEEC53003880D1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8680F53E2BCEEC53003880D1 /* Base */; };
 		8680F5412BCEEC55003880D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8680F5402BCEEC55003880D1 /* Assets.xcassets */; };
 		8680F5442BCEEC55003880D1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 8680F5432BCEEC55003880D1 /* Base */; };
+		BD165DA92BD8F8BC0047A013 /* TodoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD165DA82BD8F8BC0047A013 /* TodoListTableViewController.swift */; };
+		BD165DB32BD9067E0047A013 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD165DB12BD9067E0047A013 /* Model.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1169E32E2BD8DC0800837B2B /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
-		117196AA2BD8D28400D406F4 /* MyToDoListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyToDoListModel.xcdatamodel; sourceTree = "<group>"; };
 		1171BEBA2BD8057E00214FA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8680F5342BCEEC53003880D1 /* MyToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +32,8 @@
 		8680F5402BCEEC55003880D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8680F5432BCEEC55003880D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8680F5452BCEEC55003880D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD165DA82BD8F8BC0047A013 /* TodoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListTableViewController.swift; sourceTree = "<group>"; };
+		BD165DB22BD9067E0047A013 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +75,9 @@
 				8680F5452BCEEC55003880D1 /* Info.plist */,
 				1171BEBA2BD8057E00214FA0 /* Constants.swift */,
 				1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */,
-				117196A92BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld */,
 				1169E32E2BD8DC0800837B2B /* ToDoViewController.swift */,
+				BD165DA82BD8F8BC0047A013 /* TodoListTableViewController.swift */,
+				BD165DB12BD9067E0047A013 /* Model.xcdatamodeld */,
 			);
 			path = MyToDoList;
 			sourceTree = "<group>";
@@ -151,12 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8680F53C2BCEEC53003880D1 /* ViewController.swift in Sources */,
-				117196AB2BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld in Sources */,
 				8680F5382BCEEC53003880D1 /* AppDelegate.swift in Sources */,
 				8680F53A2BCEEC53003880D1 /* SceneDelegate.swift in Sources */,
 				1171BEBD2BD8062500214FA0 /* SettingsViewController.swift in Sources */,
+				BD165DB32BD9067E0047A013 /* Model.xcdatamodeld in Sources */,
 				1171BEBB2BD8057E00214FA0 /* Constants.swift in Sources */,
 				1169E32F2BD8DC0800837B2B /* ToDoViewController.swift in Sources */,
+				BD165DA92BD8F8BC0047A013 /* TodoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,9 +310,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V39MJ67M2P;
+				DEVELOPMENT_TEAM = P6XXZ55XD6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyToDoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -316,6 +321,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +329,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.IkeNwosu.MyToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,9 +341,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V39MJ67M2P;
+				DEVELOPMENT_TEAM = P6XXZ55XD6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyToDoList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -344,6 +352,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,6 +360,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.IkeNwosu.MyToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -381,14 +391,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		117196A92BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld */ = {
+		BD165DB12BD9067E0047A013 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				117196AA2BD8D28400D406F4 /* MyToDoListModel.xcdatamodel */,
+				BD165DB22BD9067E0047A013 /* Model.xcdatamodel */,
 			);
-			currentVersion = 117196AA2BD8D28400D406F4 /* MyToDoListModel.xcdatamodel */;
-			name = MyToDoListModel.xcdatamodeld;
-			path = /Users/user257944/Documents/MyToDoList/MyToDoList/MyToDoListModel.xcdatamodeld;
+			currentVersion = BD165DB22BD9067E0047A013 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
