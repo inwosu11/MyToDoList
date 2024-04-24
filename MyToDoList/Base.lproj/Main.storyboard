@@ -66,7 +66,7 @@
         <!--To Do Item-->
         <scene sceneID="hrw-u8-DBd">
             <objects>
-                <viewController title="To Do Item" id="xZE-TY-Cuw" sceneMemberID="viewController">
+                <viewController title="To Do Item" id="xZE-TY-Cuw" customClass="ToDoViewController" customModule="MyToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L4l-fs-u7C">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -225,6 +225,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To-Do Item" id="pJ7-zV-vhV"/>
+                    <connections>
+                        <outlet property="btnChange" destination="smd-1Y-FZT" id="d7t-49-iFx"/>
+                        <outlet property="btnHigh" destination="KnH-2m-Nb5" id="wQb-6Y-1bW"/>
+                        <outlet property="btnLow" destination="Ffc-bS-dls" id="VNk-ed-9I5"/>
+                        <outlet property="btnMedium" destination="MZ1-kn-XD2" id="H6d-e9-mNu"/>
+                        <outlet property="btnUrgent" destination="z5b-GC-Qay" id="dZq-os-HXa"/>
+                        <outlet property="lbldate" destination="XgD-z2-YEV" id="dzX-mL-sxI"/>
+                        <outlet property="txtDescription" destination="mD8-DN-abz" id="3Fm-Me-DAZ"/>
+                        <outlet property="txtTitle" destination="Vxu-lx-yRM" id="3P8-Ed-540"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrY-6o-q40" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

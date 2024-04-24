@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1169E32F2BD8DC0800837B2B /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1169E32E2BD8DC0800837B2B /* ToDoViewController.swift */; };
 		117196AB2BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 117196A92BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld */; };
 		1171BEBB2BD8057E00214FA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BEBA2BD8057E00214FA0 /* Constants.swift */; };
 		1171BEBD2BD8062500214FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1169E32E2BD8DC0800837B2B /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
 		117196AA2BD8D28400D406F4 /* MyToDoListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyToDoListModel.xcdatamodel; sourceTree = "<group>"; };
 		1171BEBA2BD8057E00214FA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				1171BEBA2BD8057E00214FA0 /* Constants.swift */,
 				1171BEBC2BD8062500214FA0 /* SettingsViewController.swift */,
 				117196A92BD8D28400D406F4 /* MyToDoListModel.xcdatamodeld */,
+				1169E32E2BD8DC0800837B2B /* ToDoViewController.swift */,
 			);
 			path = MyToDoList;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				8680F53A2BCEEC53003880D1 /* SceneDelegate.swift in Sources */,
 				1171BEBD2BD8062500214FA0 /* SettingsViewController.swift in Sources */,
 				1171BEBB2BD8057E00214FA0 /* Constants.swift in Sources */,
+				1169E32F2BD8DC0800837B2B /* ToDoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

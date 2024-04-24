@@ -2,13 +2,29 @@
 //  ToDoViewController.swift
 //  MyToDoList
 //
-//  Created by Ike Nwosu on 4/23/24.
+//  Created by user257944 on 4/23/24.
 //
 
 import UIKit
 
 class ToDoViewController: UIViewController {
 
+    @IBOutlet weak var txtTitle: UITextField!
+    
+    @IBOutlet weak var lbldate: UILabel!
+    
+    @IBOutlet weak var btnChange: UIButton!
+    
+    @IBOutlet weak var btnLow: UIButton!
+    
+    @IBOutlet weak var btnMedium: UIButton!
+    
+    @IBOutlet weak var btnHigh: UIButton!
+    
+    @IBOutlet weak var btnUrgent: UIButton!
+    
+    @IBOutlet weak var txtDescription: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
